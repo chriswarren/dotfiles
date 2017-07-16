@@ -1,0 +1,45 @@
+# Ruby
+alias irb='irb --readline -r irb/completion -rubygems'
+
+# Rails
+alias rdbm='rake db:migrate'
+alias bx="bundle exec"
+alias bxg="bx guard"
+alias rc="rails console"
+alias rct="rails console test"
+
+# Elixir
+alias watch="mix test.watch"
+alias stale="mix test.watch --stale"
+alias wip="mix test.watch --only wip"
+alias wips="mix test.watch --stale --only wip"
+
+# Spotify
+alias sp="spotify play"
+alias sps="spotify play && spotify status"
+alias spa="spotify pause"
+alias svu="spotify vol up"
+alias svd="spotify vol down"
+alias sv="spotify vol"
+alias ss="spotify status"
+alias sn="spotify next"
+alias schill="spotify play uri spotify:user:spotify:playlist:37i9dQZF1DWZeKCadgRdKQ"
+
+# Git
+alias commit_count="git shortlog -n -s --no-merges"
+alias gpush='git push origin master'
+alias gpull='git pull origin master'
+alias gco='git checkout'
+alias gstat='git status'
+alias gcam='git commit -a -m'
+alias glog='git log'
+alias gitclean='git checkout master && git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+
+# System
+alias dir='ls -al'
+alias home='cd ~/'
+alias fuck='sudo $(history -p \!\!)'
+
+alias ep='slime ~/.bash_profile'
+alias rp='. ~/.bash_profile'
+alias hosts='slime ~/.ssh/config'

@@ -1,0 +1,9 @@
+# Projects
+alias proj="cd ~/Workspace/Projects"
+alias cc="cd ~/Workspace/Projects/caring_check"
+
+# Work Projects
+alias pipe="cd ~/Workspace/zen/pipeline"
+alias pipeline="pipe"
+alias dash="cd ~/Workspace/zen/dashboard"
+
