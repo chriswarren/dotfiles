@@ -84,11 +84,6 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 	. `brew --prefix`/etc/bash_completion
 fi
 
-# Zenflow
-alias zfs="zenflow feature start"
-alias zfr="zenflow fearture review"
-alias zff="zenflow feature finish"
-
 # RVM Completion
 complete -C $rvm_scripts_path/rvm-completion.rb -o default rvm
 
