@@ -25,7 +25,63 @@ alias ss="spotify status"
 alias sn="spotify next"
 alias schill="spotify play uri spotify:user:spotify:playlist:37i9dQZF1DWZeKCadgRdKQ"
 
+# System
+alias dir='ls -al'
+alias home='cd ~/'
+alias fuck='sudo $(history -p \!\!)'
+
+alias ep='slime ~/.bash_profile'
+alias rp='. ~/.bash_profile'
+alias hosts='slime ~/.ssh/config'
+
+# ALIASES
+# Path
+alias     ..="cd .."
+alias    ...="cd ../.."
+alias   ....="cd ../../.."
+alias  .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+# # Shell
+alias la="ls -alFGgohq"
+alias vi='vim'
+# fancy ls command
+  # -l  long format
+  # -F  / after dirs, * after exe, @ after symlink
+  # -G  colorize
+  # -g suppress owner
+  # -o suppress group
+  # -h humanize sizes
+  # -q print nongraphic chars as question marks
+alias ll="ls -lFGgohq"
+
+# Tmux
+alias tml='tmux ls'
+alias tmn='tmux new -s'
+alias tma='tmux attach -t'
+alias tmk='tmux kill-session -t'
+
 # Git
+alias gap='git add -p'
+alias ga='git add'
+alias gnap='git add -N . && git add -p'
+alias gb='git branch'
+alias gc='git commit -v'
+alias git-ham='git commit -m "H.A.M." && git push -f'
+alias gd='git diff --color-words'
+alias glod='git log --graph --pretty="%Cgreen%h%Creset%Cblue%d%Creset %Cred%an%Creset: %s"'
+alias gp='git push'
+alias gpr='git pull --rebase'
+alias gst='git status'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias gra='git rebase --abort'
+alias gcm="git commit -m"
+alias gca="git commit --amend --no-edit"
+alias gco="git checkout"
+alias glog="git log --pretty=oneline"
+alias gh='git config --get remote.origin.url | ruby -ne "puts %{https://github.com/#{\$_.split(/.com[\:\/]/)[-1].gsub(%{.git},%{})}}"| xargs open'
+
 alias commit_count="git shortlog -n -s --no-merges"
 alias gpush='git push origin master'
 alias gpull='git pull origin master'
@@ -35,11 +91,11 @@ alias gcam='git commit -a -m'
 alias glog='git log'
 alias gitclean='git checkout master && git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
-# System
-alias dir='ls -al'
-alias home='cd ~/'
-alias fuck='sudo $(history -p \!\!)'
+# Bash
+alias hg="history | grep"
 
-alias ep='slime ~/.bash_profile'
-alias rp='. ~/.bash_profile'
-alias hosts='slime ~/.ssh/config'
+# Zenflow
+alias zfs="zenflow feature start"
+alias zfr="zenflow fearture review"
+alias zff="zenflow feature finish"
+
