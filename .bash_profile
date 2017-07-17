@@ -1,4 +1,5 @@
 source "$HOME/.aliases"
+source "$HOME/.shortcuts"
 
 # Store 10,000 history entries
 export HISTSIZE=10000
