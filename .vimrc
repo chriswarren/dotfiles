@@ -69,3 +69,6 @@ endif
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" highlight search matches
+set hlsearch
