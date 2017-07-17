@@ -1,4 +1,4 @@
-lashmili/alchemist.vim
+slashmili/alchemist.vim
 ctrlpvim/ctrlp.vim
 ervandew/supertab
 godlygeek/tabular
@@ -19,6 +19,6 @@ tpope/vim-surround
 tpope/vim-unimpaired
 tpope/vim-vinegar
 airblade/vim-gitgutter
-jh17/Spacegray.vim
 rizzatti/dash.vim
+ajh17/Spacegray.vim
 
