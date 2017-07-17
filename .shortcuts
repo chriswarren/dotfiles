@@ -1,6 +1,7 @@
 # Projects
 alias proj="cd ~/Workspace/Projects"
 alias cc="cd ~/Workspace/Projects/caring_check"
+alias df="cd ~/Workspace/dotfiles"
 
 # Work Projects
 alias pipe="cd ~/Workspace/zen/pipeline"
