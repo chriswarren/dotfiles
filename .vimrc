@@ -64,3 +64,8 @@ if get(g:, 'loaded_ctrlp', 1)
   let g:ctrlp_switch_buffer = 0
   let g:ctrlp_custom_ignore = '\v.DS_Store|.sass-cache|.scssc|tmp|.bundle|.git|node_modules|vendor|bower_components$|_build|deps'
 endif
+
+" The Silver Searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
