@@ -26,6 +26,7 @@ alias sn="spotify next"
 alias schill="spotify play uri spotify:user:spotify:playlist:37i9dQZF1DWZeKCadgRdKQ"
 
 # System
+alias dfup='cd ~/Workspace/dotfiles && git pull && sh bin/setup.sh'
 alias dir='ls -al'
 alias home='cd ~/'
 alias fuck='sudo $(history -p \!\!)'
