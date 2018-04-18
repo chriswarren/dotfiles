@@ -37,10 +37,21 @@ noremap   <Right> <NOP>
 " show line numbers
 set number
 
+" set a column at 100 chars
+set colorcolumn=100
+
+" set focus to 'new' panes
+set splitright
+set splitbelow
+
 " Save with leader + w
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :x<CR>
+
+" Split panes with leader and  opens Ctrl + P
+map <Leader>vv :vsp<cr><C-p>
+map <Leader>ss :sp<cr><C-p>
 
 " Unhighlight search results
 map <Leader><space> :nohl<cr>
@@ -62,13 +73,18 @@ if get(g:, 'loaded_ctrlp', 1)
   let g:ctrlp_max_height = 20
   let g:ctrlp_match_window_bottom = 0
   let g:ctrlp_switch_buffer = 0
-  let g:ctrlp_custom_ignore = '\v.DS_Store|.sass-cache|.scssc|tmp|.bundle|.git|node_modules|vendor|bower_components$|_build|deps'
+  let g:ctrlp_custom_ignore = '\v.DS_Store|.sass-cache|.scssc|tmp|.bundle|.git|node_modules|vendor|bower_components$|_build$|deps'
 endif
 
 " The Silver Searcher
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  " This uses Ack.vim to search for the word under the cursor
+  nnoremap <leader><bs> :Ack! <c-r><c-w><cr>
 endif
 
 " highlight search matches
 set hlsearch
+
+" format JSON with python
+nnoremap <Leader>j :%!python -m json.tool<cr>

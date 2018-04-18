@@ -18,51 +18,51 @@ export VISUAL EDITOR PSQL_EDITOR CLICOLOR
 # PROMPT
 # give the fullpaths of files passed in argv or piped through stdin
 function fullpath {
-	ruby -e '
-	$stdin.each_line { |path| puts File.expand_path path }  if ARGV.empty?
-	ARGV.each { |path| puts File.expand_path path }         unless ARGV.empty?
-	' "$@"
+  ruby -e '
+  $stdin.each_line { |path| puts File.expand_path path }  if ARGV.empty?
+  ARGV.each { |path| puts File.expand_path path }         unless ARGV.empty?
+  ' "$@"
 }
 
 # Prompt
 function parse_git_branch {
-	branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
-	if [ "HEAD" = "$branch" ]; then
-		echo "(no branch)"
-	else
-		echo "$branch"
-	fi
+  branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+  if [ "HEAD" = "$branch" ]; then
+    echo "(no branch)"
+  else
+    echo "$branch"
+  fi
 }
 
 function prompt_segment {
-	# for colours: http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
-	# change the 30 to change the text
-	# change the 45 to change the background
-	if [[ ! -z "$1" ]]; then
-		echo "\[\033[${2:-30};46m\]${1}\[\033[0m\]"
-	fi
+  # for colours: http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+  # change the 30 to change the text
+  # change the 45 to change the background
+  if [[ ! -z "$1" ]]; then
+    echo "\[\033[${2:-30};46m\]${1}\[\033[0m\]"
+  fi
 }
 
 function build_mah_prompt {
-	# time
-	ps1="$(prompt_segment " \@ ")"
+  # time
+  ps1="$(prompt_segment " \@ ")"
 
-	# cwd
-	ps1="${ps1} $(prompt_segment " \w ")"
+  # cwd
+  ps1="${ps1} $(prompt_segment " \w ")"
 
-	# git branch
-	git_branch=`parse_git_branch`
-	if [[ ! -z "$git_branch" ]]
-	then
-		ps1="${ps1} $(prompt_segment " $git_branch " 35)"
-	fi
+  # git branch
+  git_branch=`parse_git_branch`
+  if [[ ! -z "$git_branch" ]]
+  then
+    ps1="${ps1} $(prompt_segment " $git_branch " 35)"
+  fi
 
-	# next line
-	ps1="${ps1}\n\$ "
+  # next line
+  ps1="${ps1}\n\$ "
 
-	# set prompt output
-	# PS1="$ps1"
-	PS1="$ps1"
+  # set prompt output
+  # PS1="$ps1"
+  PS1="$ps1"
 }
 
 PROMPT_COMMAND='build_mah_prompt'
@@ -70,10 +70,10 @@ PROMPT_COMMAND='build_mah_prompt'
 # This is absolutely disgusting, but I can't find a better way to do it. It will colourize the
 # standarderr red (but will print on stdout, and stdout on stderr)
 function colour-red {
-	ruby -e '$stderr.print "\e[31m", $stdin.read, "\e[0m"'
+  ruby -e '$stderr.print "\e[31m", $stdin.read, "\e[0m"'
 }
 function colour-stderr-red {
-	( $* 3>&1 1>&2- 2>&3- ) | colour-red
+  ( $* 3>&1 1>&2- 2>&3- ) | colour-red
 }
 
 export HISTIGNORE="%*"
@@ -82,7 +82,7 @@ export HISTIGNORE="%*"
 
 # Git Bash Completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
-	. `brew --prefix`/etc/bash_completion
+  . `brew --prefix`/etc/bash_completion
 fi
 
 # RVM Completion
