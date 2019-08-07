@@ -109,3 +109,7 @@ function isreg {
 [[ -s "/Users/cdw/.rvm/scripts/rvm" ]] && source "/Users/cdw/.rvm/scripts/rvm"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash

@@ -22,3 +22,5 @@ airblade/vim-gitgutter
 rizzatti/dash.vim
 ajh17/Spacegray.vim
 elixir-lang/vim-elixir
+christoomey/vim-tmux-navigator
+mileszs/ack.vim
