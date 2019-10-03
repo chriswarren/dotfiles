@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 syntax enable
-colorscheme spacegray
+colorscheme dichromatic
 
 filetype plugin indent on
 
