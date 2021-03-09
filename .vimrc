@@ -1,7 +1,6 @@
 execute pathogen#infect()
 
 syntax enable
-colorscheme dichromatic
 
 filetype plugin indent on
 
@@ -39,6 +38,11 @@ set number
 
 " set a column at 100 chars
 set colorcolumn=100
+
+" set tabs and spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " set focus to 'new' panes
 set splitright
@@ -88,3 +92,5 @@ set hlsearch
 
 " format JSON with python
 nnoremap <Leader>j :%!python -m json.tool<cr>
+
+colorscheme dichromatic

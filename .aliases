@@ -14,16 +14,8 @@ alias stale="mix test.watch --stale"
 alias wip="mix test.watch --only wip"
 alias wips="mix test.watch --stale --only wip"
 
-# Spotify
-alias sp="spotify play"
-alias sps="spotify play && spotify status"
-alias spa="spotify pause"
-alias svu="spotify vol up"
-alias svd="spotify vol down"
-alias sv="spotify vol"
-alias ss="spotify status"
-alias sn="spotify next"
-alias schill="spotify play uri spotify:user:spotify:playlist:37i9dQZF1DWZeKCadgRdKQ"
+# Docker
+alias dock="docker-compose"
 
 # System
 alias dfup='cd ~/Workspace/dotfiles && git pull && sh bin/setup.sh'
@@ -44,8 +36,8 @@ alias  .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 # # Shell
-alias la="ls -alFGgohq"
 alias vi='vim'
+alias la="ls -alFGgohq"
 # fancy ls command
   # -l  long format
   # -F  / after dirs, * after exe, @ after symlink
@@ -54,7 +46,6 @@ alias vi='vim'
   # -o suppress group
   # -h humanize sizes
   # -q print nongraphic chars as question marks
-alias ll="ls -lFGgohq"
 
 # Tmux
 alias tml='tmux ls'
@@ -94,9 +85,4 @@ alias gitclean='git checkout master && git branch --merged master | grep -v "\* 
 
 # Bash
 alias hg="history | grep"
-
-# Zenflow
-alias zfs="zenflow feature start"
-alias zfr="zenflow fearture review"
-alias zff="zenflow feature finish"
 
