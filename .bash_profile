@@ -1,4 +1,3 @@
-source ~/.profile
 source "$HOME/.aliases"
 source "$HOME/.shortcuts"
 source "$HOME/.env_vars"
@@ -27,47 +26,47 @@ function fullpath {
 }
 
 # # Prompt
-# function parse_git_branch {
-#   branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
-#   if [ "HEAD" = "$branch" ]; then
-#     echo "(no branch)"
-#   else
-#     echo "$branch"
-#   fi
-# }
+function parse_git_branch {
+  branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+  if [ "HEAD" = "$branch" ]; then
+    echo "(no branch)"
+  else
+    echo "$branch"
+  fi
+}
 
-# function prompt_segment {
-#   # for colours: http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
-#   # change the 30 to change the text
-#   # change the 45 to change the background
-#   if [[ ! -z "$1" ]]; then
-#     echo "\[\033[${2:-30};46m\]${1}\[\033[0m\]"
-#   fi
-# }
+function prompt_segment {
+  # for colours: http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+  # change the 30 to change the text
+  # change the 45 to change the background
+  if [[ ! -z "$1" ]]; then
+    echo "\[\033[${2:-30};46m\]${1}\[\033[0m\]"
+  fi
+}
 
-# function build_mah_prompt {
-#   # time
-#   ps1="$(prompt_segment " \@ ")"
+function build_mah_prompt {
+  # time
+  ps1="$(prompt_segment " \@ ")"
 
-#   # cwd
-#   ps1="${ps1} $(prompt_segment " \w ")"
+  # cwd
+  ps1="${ps1} $(prompt_segment " \w ")"
 
-#   # git branch
-#   git_branch=`parse_git_branch`
-#   if [[ ! -z "$git_branch" ]]
-#   then
-#     ps1="${ps1} $(prompt_segment " $git_branch " 35)"
-#   fi
+  # git branch
+  git_branch=`parse_git_branch`
+  if [[ ! -z "$git_branch" ]]
+  then
+    ps1="${ps1} $(prompt_segment " $git_branch " 35)"
+  fi
 
-#   # next line
-#   ps1="${ps1}\n\$ "
+  # next line
+  ps1="${ps1}\n\$ "
 
-#   # set prompt output
-#   # PS1="$ps1"
-#   PS1="$ps1"
-# }
+  # set prompt output
+  # PS1="$ps1"
+  PS1="$ps1"
+}
 
-# PROMPT_COMMAND='build_mah_prompt'
+PROMPT_COMMAND='build_mah_prompt'
 
 # source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
 # export GIT_PS1_SHOWCOLORHINTS='1'
@@ -95,8 +94,10 @@ function colour-stderr-red {
 
 export HISTIGNORE="%*"
 
-# export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=/Users/chriswarren/.asdf/installs/python/2.7.13/bin/:$PATH
+
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.bash_profile
 
 # Git Bash Completion
 if [ -f ~/.git-completion.bash ]; then
@@ -127,7 +128,11 @@ function isreg {
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/postgresql@11/bin"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+. /opt/homebrew/opt/asdf/asdf.sh
