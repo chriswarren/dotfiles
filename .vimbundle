@@ -12,6 +12,7 @@ tpope/vim-markdown
 tpope/vim-pathogen
 tpope/vim-rails
 tpope/vim-repeat
+tpope/vim-rhubarb
 tpope/vim-rsi
 tpope/vim-sensible
 tpope/vim-sleuth
@@ -24,3 +25,5 @@ elixir-lang/vim-elixir
 christoomey/vim-tmux-navigator
 mileszs/ack.vim
 romainl/vim-dichromatic
+dracula/vim
+pechorin/any-jump.vim
